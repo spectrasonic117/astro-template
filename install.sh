@@ -47,5 +47,7 @@ fi
 echo "$(tput setaf 3)Creating git Repository... $(tput sgr 0)"
 command git init
 
+command rm -rf  ./install.sh
+
 echo ""
 echo "$(tput setaf 2)Prettier & ESLint Astro plugins installed $(tput sgr 0)"

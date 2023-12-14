@@ -1,6 +1,10 @@
 # Astro Starter Kit: Minimal
 
 ```sh
+git clone https://github.com/spectrasonic117/astro-template.git ; cd astro-template
+; bash ./install.sh
+```
+```sh
 npm create astro@latest -- --template minimal
 ```
 
