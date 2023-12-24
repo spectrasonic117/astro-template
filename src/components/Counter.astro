@@ -1,0 +1,107 @@
+---
+
+---
+
+<section class='section'>
+	<button type='button' class='decrement' id='decrement'>-</button>
+	<p></p>
+	<button type='button' class='increment' id='increment'>+</button>
+</section>
+
+<style lang='scss'>
+	:root {
+		--shadow-color: 0deg 0% 3%;
+		--shadow-elevation-low: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.48),
+			0px 1.1px 1.3px -2px hsl(var(--shadow-color) / 0.58);
+		--shadow-elevation-medium: 0px 0.2px 0.2px
+				hsl(var(--shadow-color) / 0.45),
+			0px 1.4px 1.7px -1px hsl(var(--shadow-color) / 0.51),
+			0px 5.3px 6.3px -2px hsl(var(--shadow-color) / 0.58);
+		--shadow-elevation-high: 0px 0.2px 0.2px hsl(var(--shadow-color) / 0.5),
+			0px 3px 3.6px -0.5px hsl(var(--shadow-color) / 0.54),
+			-0.1px 6.8px 8.1px -1px hsl(var(--shadow-color) / 0.59),
+			-0.1px 14.3px 17.1px -1.5px hsl(var(--shadow-color) / 0.63),
+			-0.2px 28.2px 33.6px -2px hsl(var(--shadow-color) / 0.67);
+	}
+
+	$font_color: #000;
+	$background: #fff;
+	$increment: #00e676;
+	$decrement: #ff1744;
+	$increment_hover: #00a152;
+	$decrement_hover: #b2102f;
+
+	section {
+		color: $font_color;
+		background: $background;
+		border-radius: 10px;
+		display: flex;
+		height: 60px;
+		font-family: system-ui;
+		font-size: 1.5em;
+		box-shadow: var(--shadow-elevation-medium);
+		transition: box-shadow 0.3s ease-in-out;
+		&:hover {
+			box-shadow: var(--shadow-elevation-high);
+			transition: box-shadow 0.3s ease-in-out;
+		}
+	}
+	p {
+		width: 50px;
+		padding: 10px;
+		text-align: center;
+		align-self: center;
+	}
+
+	button {
+		padding: 10px;
+		width: 50px;
+		outline: none;
+		border: none;
+		font-size: 1.5em;
+		align-self: center;
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:nth-child(1) {
+			border-radius: 10px 0 0 10px;
+			background: $decrement;
+			&:hover {
+				background: $decrement_hover;
+			}
+		}
+		&:nth-child(3) {
+			border-radius: 0 10px 10px 0;
+			background: $increment;
+			&:hover {
+				background: $increment_hover;
+			}
+		}
+	}
+	.section {
+		display: flex;
+		width: auto;
+	}
+</style>
+
+<script is:inline>
+	const increment = document.getElementById('increment');
+	const decrement = document.getElementById('decrement');
+	const p = document.querySelector('p');
+
+	let count = 0;
+	p.textContent = count;
+
+	increment.addEventListener('click', () => {
+		count++;
+		p.textContent = count;
+	});
+
+	decrement.addEventListener('click', () => {
+		if (count > 0) {
+			count--;
+			p.textContent = count;
+		}
+	});
+</script>

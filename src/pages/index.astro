@@ -1,14 +1,11 @@
 ---
-// Layouts
-import Base from "../layouts/layoutbase.astro";
+import Base from '../layouts/layoutbase.astro';
+import Container from '../components/Container.astro';
 
-// Components
-import TitleComp from "../components/titlecomp.astro";
-
-const title = "Astro Template";
-const description = "A Template page for astro";
+const title = 'Astro Template Page';
+const description = 'Tamplate Page';
 ---
 
 <Base title={title} description={description}>
-	<TitleComp />
+	<Container />
 </Base>

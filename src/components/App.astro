@@ -1,0 +1,47 @@
+---
+import Counter from './Counter.astro';
+const title = 'Astro V4 Template';
+---
+
+<article class='astro_grid'>
+	<img
+		src='/astro_white.svg'
+		alt='Astro logo white'
+		class='astro_logo'
+		id='imagen_click'
+	/>
+	<h1 class='title'>{title}</h1>
+	<Counter />
+</article>
+
+<style lang='scss'>
+	$font_color: white;
+	.astro_grid {
+		max-width: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.astro_logo {
+		width: 200px;
+	}
+	.title {
+		width: 250px;
+		font-size: 3rem;
+		color: $font_color;
+		align-self: center;
+		font-family: system-ui;
+		text-align: center;
+		text-wrap: pretty;
+	}
+</style>
+
+<script is:inline>
+	const imagen_click = document.getElementById('imagen_click');
+
+	imagen_click.addEventListener('click', () => {
+		alert('Code with ❤️ by Spectrasonic');
+	});
+</script>
