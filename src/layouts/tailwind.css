@@ -4,6 +4,6 @@
 
 @layer components {
 	.test {
-		@apply border-[#ff0000] border-dotted border-2;
+		@apply border-red-600 border-dotted border-2 bg-red-600/30;
 	}
 }
