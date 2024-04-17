@@ -1,40 +1,58 @@
 ---
 import Counter from '@components/Counter.astro';
-const title = 'Astro V4 Template';
+const title = 'Astro v4.1 Template';
 ---
 
-<article class='astro_grid'>
-	<img
-		src='/astro_white.svg'
-		alt='Astro logo white'
-		class='astro_logo'
-		id='imagen_click'
-	/>
-	<h1 class='title'>{title}</h1>
-	<Counter />
-</article>
+<section>
+	<article class='app_flex'>
+		<img
+			src='/astro_white.svg'
+			alt='Astro logo white'
+			class='astro_logo'
+			id='imagen_click'
+			draggable='false'
+		/>sni
+		<h1 class='title'>{title}</h1>
+		<Counter />
+	</article>
+</section>
 
 <style lang='scss'>
+	$background: #1f1f1f;
+	$max_height: 100dvh;
+	$max_width: 100vw;
 	$font_color: white;
-	.astro_grid {
-		max-width: 500px;
+
+	@mixin flex_center {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	section {
+		background: $background;
+		width: $max_width;
+		height: $max_height;
+		@include flex_center();
+		font-family: system-ui;
+		font-weight: bold;
+	}
+
+	.app_flex {
+		@include flex_center();
+		flex-direction: column;
 		flex-wrap: wrap;
 	}
 
 	.astro_logo {
-		width: 200px;
+		width: 180px;
 	}
 	.title {
 		width: 250px;
-		font-size: 3rem;
+		font-size: 2.7rem;
 		color: $font_color;
 		align-self: center;
-		font-family: system-ui;
 		text-align: center;
-		text-wrap: pretty;
 	}
 </style>
 

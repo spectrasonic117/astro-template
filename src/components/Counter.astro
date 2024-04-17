@@ -38,11 +38,12 @@
 	}
 
 	section {
+		margin: 20px 0;
 		color: $font_color;
 		background: $background;
 		border-radius: 10px;
 		display: flex;
-		height: 60px;
+		height: 74px;
 		font-family: system-ui;
 		font-size: $font_size;
 		box-shadow: var(--shadow-elevation-medium);
@@ -87,8 +88,8 @@
 </style>
 
 <script is:inline>
-	const increment = document.getElementById('increment');
-	const decrement = document.getElementById('decrement');
+	const increment = document.querySelector('#increment');
+	const decrement = document.querySelector('#decrement');
 	const p = document.querySelector('p');
 
 	let count = 0;
